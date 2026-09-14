@@ -1,0 +1,24 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# PyInstaller
+build/
+dist/
+*.spec
+
+# Node
+node_modules/
+
+# Environment / local files
+.env
+.env.*
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

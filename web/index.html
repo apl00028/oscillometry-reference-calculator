@@ -1,0 +1,328 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <title>Calculadora de oscilometría</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container">
+      <div>
+        <p class="eyebrow">Herramienta de investigación</p>
+        <h1>Calculadora de oscilometría</h1>
+        <p class="subtitle">
+          Valores de referencia según Gochicoa-Rangel et al.
+        </p>
+      </div>
+
+      <div class="privacy-badge">
+        <span class="privacy-dot"></span>
+        Cálculo local · los datos no se envían
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-grid">
+
+    <section class="panel input-panel">
+      <div class="section-heading">
+        <div>
+          <p class="section-number">01</p>
+          <h2>Datos del paciente</h2>
+        </div>
+        <p>
+          Los parámetros oscilométricos son opcionales.
+        </p>
+      </div>
+
+      <form id="calculator-form">
+
+        <div class="form-section">
+          <h3>Datos demográficos</h3>
+
+          <div class="fields-grid">
+            <label>
+              <span>Sexo</span>
+              <select id="sex" required>
+                <option value="">Seleccionar</option>
+                <option value="Mujer">Mujer</option>
+                <option value="Hombre">Hombre</option>
+              </select>
+            </label>
+
+            <label>
+              <span>Edad <small>años</small></span>
+              <input
+                id="age"
+                inputmode="decimal"
+                placeholder="60"
+              >
+            </label>
+
+            <label>
+              <span>Talla <small>cm</small></span>
+              <input
+                id="height"
+                inputmode="decimal"
+                placeholder="165"
+              >
+            </label>
+
+            <label>
+              <span>Peso <small>kg</small></span>
+              <input
+                id="weight"
+                inputmode="decimal"
+                placeholder="65"
+              >
+            </label>
+          </div>
+
+          <div class="bmi-box">
+            <span>IMC calculado</span>
+            <strong id="bmi">—</strong>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <div class="section-row">
+            <h3>Oscilometría</h3>
+            <span class="optional">Opcional</span>
+          </div>
+
+          <div class="fields-grid">
+            <label>
+              <span>R5-R20</span>
+              <input
+                id="r5r20"
+                inputmode="decimal"
+                placeholder="0,08"
+              >
+            </label>
+
+            <label>
+              <span>X5</span>
+              <input
+                id="x5"
+                inputmode="decimal"
+                placeholder="-0,15"
+              >
+            </label>
+
+            <label>
+              <span>Fres</span>
+              <input
+                id="fres"
+                inputmode="decimal"
+                placeholder="20"
+              >
+            </label>
+
+            <label>
+              <span>AX</span>
+              <input
+                id="ax"
+                inputmode="decimal"
+                placeholder="1,0"
+              >
+            </label>
+          </div>
+        </div>
+
+        <div
+          id="messages"
+          class="messages hidden"
+          aria-live="polite"
+        ></div>
+
+        <div class="actions">
+          <button type="submit" class="primary-button">
+            Calcular resultados
+          </button>
+
+          <button
+            type="button"
+            id="clear-button"
+            class="secondary-button"
+          >
+            Limpiar
+          </button>
+        </div>
+
+      </form>
+    </section>
+
+
+    <section class="results-column">
+
+      <div class="section-heading results-heading">
+        <div>
+          <p class="section-number">02</p>
+          <h2>Resultados</h2>
+        </div>
+        <p>
+          LLN y ULN son límites de referencia.
+        </p>
+      </div>
+
+      <div class="results-grid">
+
+        <article class="result-card" data-result="r5r20">
+          <div class="card-header">
+            <div>
+              <p class="parameter">R5-R20</p>
+              <span class="direction">
+                Alterado si observado &gt; ULN
+              </span>
+            </div>
+            <span class="status neutral">SIN CALCULAR</span>
+          </div>
+
+          <div class="predicted">
+            <span>Predicho</span>
+            <strong class="predicted-value">—</strong>
+          </div>
+
+          <div class="limits">
+            <div>
+              <span>LLN</span>
+              <strong class="lln-value">—</strong>
+            </div>
+            <div>
+              <span>ULN</span>
+              <strong class="uln-value">—</strong>
+            </div>
+            <div>
+              <span>z-score</span>
+              <strong class="z-value">—</strong>
+            </div>
+          </div>
+        </article>
+
+
+        <article class="result-card" data-result="x5">
+          <div class="card-header">
+            <div>
+              <p class="parameter">X5</p>
+              <span class="direction">
+                Alterado si observado &lt; LLN
+              </span>
+            </div>
+            <span class="status neutral">SIN CALCULAR</span>
+          </div>
+
+          <div class="predicted">
+            <span>Predicho</span>
+            <strong class="predicted-value">—</strong>
+          </div>
+
+          <div class="limits">
+            <div>
+              <span>LLN</span>
+              <strong class="lln-value">—</strong>
+            </div>
+            <div>
+              <span>ULN</span>
+              <strong class="uln-value">—</strong>
+            </div>
+            <div>
+              <span>z-score</span>
+              <strong class="z-value">—</strong>
+            </div>
+          </div>
+        </article>
+
+
+        <article class="result-card" data-result="fres">
+          <div class="card-header">
+            <div>
+              <p class="parameter">Fres</p>
+              <span class="direction">
+                Alterado si observado &gt; ULN
+              </span>
+            </div>
+            <span class="status neutral">SIN CALCULAR</span>
+          </div>
+
+          <div class="predicted">
+            <span>Predicho</span>
+            <strong class="predicted-value">—</strong>
+          </div>
+
+          <div class="limits">
+            <div>
+              <span>LLN</span>
+              <strong class="lln-value">—</strong>
+            </div>
+            <div>
+              <span>ULN</span>
+              <strong class="uln-value">—</strong>
+            </div>
+            <div>
+              <span>z-score</span>
+              <strong class="z-value">—</strong>
+            </div>
+          </div>
+        </article>
+
+
+        <article class="result-card" data-result="ax">
+          <div class="card-header">
+            <div>
+              <p class="parameter">AX</p>
+              <span class="direction">
+                Alterado si observado &gt; ULN
+              </span>
+            </div>
+            <span class="status neutral">SIN CALCULAR</span>
+          </div>
+
+          <div class="predicted">
+            <span>Predicho</span>
+            <strong class="predicted-value">—</strong>
+          </div>
+
+          <div class="limits">
+            <div>
+              <span>LLN</span>
+              <strong class="lln-value">—</strong>
+            </div>
+            <div>
+              <span>ULN</span>
+              <strong class="uln-value">—</strong>
+            </div>
+            <div>
+              <span>z-score</span>
+              <strong class="z-value">—</strong>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <aside class="reference-box">
+        <strong>Referencia</strong>
+        <p>
+          Gochicoa-Rangel et al. Reference equations using
+          segmented regressions for impulse oscillometry in
+          healthy subjects aged 2.7–90 years.
+          ERJ Open Research. 2023;9:00503-2023.
+        </p>
+        <p>
+          Herramienta destinada al cálculo de valores de
+          referencia y apoyo a investigación.
+        </p>
+      </aside>
+
+    </section>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
