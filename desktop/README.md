@@ -21,9 +21,9 @@ Los parámetros oscilométricos son opcionales. Sexo, edad, talla y peso son nec
 
 ## Referencia científica
 
-Gochicoa-Rangel L, Martínez-Briseño D, Guerrero-Zúñiga S, et al.  
-*Reference equations using segmented regressions for impulse oscillometry in healthy subjects aged 2.7-90 years.*  
-ERJ Open Research. 2023;9(6):00503-2023.  
+Gochicoa-Rangel L, Martínez-Briseño D, Guerrero-Zúñiga S, et al.
+*Reference equations using segmented regressions for impulse oscillometry in healthy subjects aged 2.7-90 years.*
+ERJ Open Research. 2023;9(6):00503-2023.
 DOI: https://doi.org/10.1183/23120541.00503-2023
 
 ## Rango de edad

@@ -19,8 +19,8 @@ The web version requires no installation.
 
 This calculator implements reference equations derived from:
 
-**Gochicoa-Rangel L, Martínez-Briseño D, Guerrero-Zúñiga S, et al.**  
-*Reference equations using segmented regressions for impulse oscillometry in healthy subjects aged 2.7-90 years.*  
+**Gochicoa-Rangel L, Martínez-Briseño D, Guerrero-Zúñiga S, et al.**
+*Reference equations using segmented regressions for impulse oscillometry in healthy subjects aged 2.7-90 years.*
 **ERJ Open Research. 2023;9(6):00503-2023.**
 
 - DOI: https://doi.org/10.1183/23120541.00503-2023
@@ -537,9 +537,9 @@ The original Gochicoa-Rangel publication should be consulted when the reference 
 
 If this software is used in research, please cite the scientific publication from which the reference equations were derived:
 
-Gochicoa-Rangel L, Martínez-Briseño D, Guerrero-Zúñiga S, et al.  
-**Reference equations using segmented regressions for impulse oscillometry in healthy subjects aged 2.7-90 years.**  
-*ERJ Open Research.* 2023;9(6):00503-2023.  
+Gochicoa-Rangel L, Martínez-Briseño D, Guerrero-Zúñiga S, et al.
+**Reference equations using segmented regressions for impulse oscillometry in healthy subjects aged 2.7-90 years.**
+*ERJ Open Research.* 2023;9(6):00503-2023.
 DOI: https://doi.org/10.1183/23120541.00503-2023
 
 The software repository may additionally be cited by its repository URL:
