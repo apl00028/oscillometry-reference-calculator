@@ -61,7 +61,6 @@
               <input
                 id="age"
                 inputmode="decimal"
-                placeholder="60"
               >
             </label>
 
@@ -70,7 +69,6 @@
               <input
                 id="height"
                 inputmode="decimal"
-                placeholder="165"
               >
             </label>
 
@@ -79,7 +77,6 @@
               <input
                 id="weight"
                 inputmode="decimal"
-                placeholder="65"
               >
             </label>
           </div>
@@ -102,7 +99,6 @@
               <input
                 id="r5r20"
                 inputmode="decimal"
-                placeholder="0,08"
               >
             </label>
 
@@ -111,7 +107,6 @@
               <input
                 id="x5"
                 inputmode="decimal"
-                placeholder="-0,15"
               >
             </label>
 
@@ -120,7 +115,6 @@
               <input
                 id="fres"
                 inputmode="decimal"
-                placeholder="20"
               >
             </label>
 
@@ -129,7 +123,6 @@
               <input
                 id="ax"
                 inputmode="decimal"
-                placeholder="1,0"
               >
             </label>
           </div>
@@ -322,7 +315,105 @@
 
     </section>
   </main>
+  <section class="container excel-section">
+    <div class="excel-panel">
 
+      <div class="section-heading">
+        <div>
+          <p class="section-number">03</p>
+          <h2>Procesamiento Excel</h2>
+        </div>
+
+        <p>
+          Procesamiento local en el navegador.
+          El archivo no se envía a ningún servidor.
+        </p>
+      </div>
+
+      <div class="excel-layout">
+
+        <div class="excel-info">
+          <h3>Procesamiento por lotes</h3>
+
+          <p>
+            Utilice la plantilla o un archivo Excel
+            con las columnas esperadas.
+          </p>
+
+          <div class="column-info">
+            <strong>Obligatorias</strong>
+            <span>
+              Sexo · Edad · Talla_cm · Peso_kg
+            </span>
+          </div>
+
+          <div class="column-info">
+            <strong>Opcionales</strong>
+            <span>
+              R5_R20 · X5 · Fres · AX
+            </span>
+          </div>
+
+          <button
+            type="button"
+            id="download-template"
+            class="secondary-button excel-template-button"
+          >
+            Descargar plantilla Excel
+          </button>
+        </div>
+
+        <div class="excel-upload">
+
+          <label
+            for="excel-file"
+            class="file-picker"
+          >
+            <strong>Seleccionar archivo .xlsx</strong>
+            <span>
+              El procesamiento se realiza en este navegador.
+            </span>
+          </label>
+
+          <input
+            type="file"
+            id="excel-file"
+            accept=".xlsx"
+            hidden
+          >
+
+          <div
+            id="selected-file"
+            class="selected-file"
+          >
+            Ningún archivo seleccionado
+          </div>
+
+          <button
+            type="button"
+            id="process-excel"
+            class="primary-button excel-process-button"
+            disabled
+          >
+            Procesar Excel
+          </button>
+
+          <div
+            id="excel-message"
+            class="excel-message hidden"
+            aria-live="polite"
+          ></div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+    <script src="vendor/xlsx.full.min.js"></script>
   <script type="module" src="app.js"></script>
+  <script type="module" src="excel_ui.js"></script>
 </body>
 </html>
+
+
