@@ -1,4 +1,4 @@
-﻿# Calculadora de oscilometria
+# Calculadora de oscilometria
 
 Herramienta en Python para calcular valores de referencia de oscilometria a partir de las ecuaciones publicadas por Gochicoa-Rangel et al.
 
@@ -69,9 +69,9 @@ Desde esta carpeta:
 
 ## Tests
 
-Desde la raiz del repositorio:
+Desde esta carpeta (`desktop/`):
 
-    python -m unittest discover -s tools/oscillometry_converter/tests -v
+    python -m unittest discover -s tests -v
 
 La suite cubre ecuaciones, validacion y procesamiento Excel.
 
