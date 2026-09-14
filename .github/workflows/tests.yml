@@ -1,0 +1,36 @@
+﻿name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  desktop:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+
+      - name: Install desktop dependencies
+        run: pip install -r desktop/requirements.txt
+
+      - name: Run desktop tests
+        working-directory: desktop
+        run: python -m unittest discover -s tests -v
+
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Run web tests
+        working-directory: web
+        run: npm test
